@@ -39,6 +39,14 @@ class Wind(Base):
     wind_direction = Column(Enum(*WIND_DIRECTIONS, name='wind_direction'), nullable=False)
     
     weather = relationship("Weather", back_populates="wind", uselist=False)
+        # Нове поле для визначення, чи варто виходити на вулицю
+    should_go_outside = Column(Boolean, nullable=False)
+
+    def calculate_should_go_outside(self):
+        # Якщо вітер більше 36 км/год (10 м/с), то не варто виходити
+        if self.wind_kph > 36:  # 36 км/год = 10 м/с
+            return False
+        return True
 
 
 class AirQuality(Base):
