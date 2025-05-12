@@ -3,7 +3,8 @@ from sqlalchemy.orm import sessionmaker
 from models import Weather, Base
 
 # Підключення до бази даних 
-DATABASE_URL = "postgresql://postgres:Vv05091003@localhost/lab3"
+# DATABASE_URL = "postgresql://postgres:Vv05091003@localhost/lab3"
+DATABASE_URL = "mysql+pymysql://root:Vv05091003@localhost/lab3_mysql"
 # Створюємо підключення до бази даних
 engine = create_engine(DATABASE_URL)
 Base.metadata.create_all(bind=engine)

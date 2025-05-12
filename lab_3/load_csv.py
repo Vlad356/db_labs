@@ -4,7 +4,8 @@ from sqlalchemy.orm import sessionmaker
 from models import Base, Weather, Wind, AirQuality
 
 # Параметри підключення до бази даних
-DATABASE_URL = "postgresql://postgres:Vv05091003@localhost/lab3"
+# DATABASE_URL = "postgresql://postgres:Vv05091003@localhost/lab3"
+DATABASE_URL = "mysql+pymysql://root:Vv05091003@localhost/lab3_mysql"
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 session = Session()
