@@ -22,7 +22,7 @@ for _, row in df.iterrows():
         wind_mph=row['wind_mph'],
         gust_kph=row.get('gust_kph'),
         wind_direction=row['wind_direction'],
-        should_go_outside=row['wind_kph'] <= 36.0
+
     )
     session.add(wind)
     session.flush()  # отримати wind.id
